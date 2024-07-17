@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload CSV</title>
+    <!-- <link rel="stylesheet" href="{% static 'css/styles.css' %}"> -->
+</head>
+<body>
+    <div class="container">
+        <h1>Upload CSV File</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="file">Select CSV file:</label>
+            <input type="file" id="file" name="file" accept=".csv" required>
+            <button type="submit">Upload</button>
+        </form>
+
+        <!-- {% if csvdata %}
+        <h2>Equipment Data</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Equipment ID</th>
+                    <th>timestamp</th>
+                    <th>value</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for equipment in csvdata %}
+                <tr>
+                    <td>{{ equipment.equipment_id }}</td>
+                    <td>{{ equipment.timestamp }}</td>
+                    <td>{{ equipment.value }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>No equipment data available.</p>
+        {% endif %} -->
+    </div>
+</body>
+</html>

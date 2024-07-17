@@ -1,0 +1,124 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Sensor Data</title>
+</head>
+<body>
+    <h1>Submit Sensor Data</h1>
+    <form method="post" action="{% url 'sensor-data-view' %}">
+        {% csrf_token %}
+        <div>
+            <label for="equipment_id">Equipment ID:</label>
+            <input type="text" id="equipment_id" name="equipment_id" maxlength="50" required>
+        </div>
+        <div>
+            <label for="timestamp">Timestamp:</label>
+            <input type="datetime-local" id="timestamp" name="timestamp" required>
+        </div>
+        <div>
+            <label for="value">Value:</label>
+            <input type="number" id="value" name="value" step="0.01" required>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Sensor Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 20px;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #666;
+        }
+        input[type="text"],
+        input[type="datetime-local"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        ul {
+            margin-top: 20px;
+            padding: 0;
+            list-style-type: none;
+        }
+        ul li {
+            background-color: #f2f2f2;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-left: 4px solid #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <h1>Submit Sensor Data</h1>
+    <form method="post" action="{% url 'sensor-data-view' %}">
+        {% csrf_token %}
+        <div>
+            <label for="equipment_id">Equipment ID:</label>
+            <input type="text" id="equipment_id" name="equipment_id" maxlength="50" required>
+        </div>
+        <div>
+            <label for="timestamp">Timestamp:</label>
+            <input type="datetime-local" id="timestamp" name="timestamp" required>
+        </div>
+        <div>
+            <label for="value">Value:</label>
+            <input type="number" id="value" name="value" step="0.01" required>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
